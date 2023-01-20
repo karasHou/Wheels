@@ -11,7 +11,7 @@
 * 子包命名空间
 
 针对pnpm packages下的包，包名一般都通用为命名空间+项目名，这里命名为@monorepo/http,必须要命名，不然pnpm add --filter的时候找不到添加包的项目目录
->比如这里叫 @hou/swiper
+>比如这里叫 @karashou/swiper
 
 * 工作空间依赖
 
