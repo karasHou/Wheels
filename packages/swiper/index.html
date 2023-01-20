@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- 最外层容器 -->
+  <div class="container">
+    <!--  图片列表  -->
+    <!-- slide的wrapper -->
+    <ul class="ul-img">
+      <li class="li-img">1</li>
+      <li class="li-img">2</li>
+      <li class="li-img">3</li>
+      <li class="li-img">4</li>
+      <li class="li-img">5</li>
+    </ul>
+
+    <!--  上一张、下一张按钮  -->
+    <div class="prev">
+      <span>&lt;</span>
+    </div>
+    <div class="next">
+      <span>&gt;</span>
+    </div>
+
+    <!-- 数字切换按钮 -->
+    <div class="num-box">
+      <ul class="num-ul">
+        <li data-index="0">1</li>
+        <li data-index="1">2</li>
+        <li data-index="2">3</li>
+        <li data-index="3">4</li>
+        <li data-index="4">5</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./swiper.js"></script>
+</body>
+
+</html>
