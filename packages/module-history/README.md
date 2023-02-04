@@ -1,2 +1,2 @@
 # 模块历史体验
-[参考地址](JavaScript早期实现模块化)
+[JavaScript早期实现模块化](https://www.cnblogs.com/lvzl/p/14780565.html)
