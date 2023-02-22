@@ -31,25 +31,35 @@ var numList = document
 let swiperIdx = 0;
 
 function setSlider() {
-  wrapper.style.left = `${-600 * (swiperIdx)}px`;
+  // wrapper.style.left = `${-600 * (swiperIdx)}px`;  
+  // 优化后：
+  wrapper.style.transform = `translate3d(${-600 * (swiperIdx)}px, 0, 0)`
 
-  // 设置指示器激活
+  // 更新指示器样式
+  setIndicatorStyle();
+}
+
+
+
+function setIndicatorStyle() {
+  // 清空指示器样式
+  Array.from(numUlDom.children).forEach(element => {
+    element.style.background = "";
+  });
+
   numList[swiperIdx].style.background = "#ccc";
 }
 
 
 // 向后切换轮播
 rightBtn.addEventListener('click', function () {
-  // 清空指示器样式
-  numList[swiperIdx].style.backgroundColor = "";
-
   swiperIdx += 1;
 
   if (swiperIdx >= slidesNum) {
     swiperIdx = 0;
     wrapper.style.transition = "none";
   } else {
-    wrapper.style.transition = "300ms ease left";
+    wrapper.style.transition = "300ms ease transform";
   }
 
   setSlider()
@@ -57,8 +67,6 @@ rightBtn.addEventListener('click', function () {
 
 // 向前切换轮播
 leftBtn.addEventListener('click', function () {
-  // 清空指示器样式
-  numList[swiperIdx].style.backgroundColor = "";
 
   swiperIdx-= 1;
   
@@ -66,8 +74,27 @@ leftBtn.addEventListener('click', function () {
     swiperIdx = slidesNum - 1;
     wrapper.style.transition = "none";
   } else {
-    wrapper.style.transition = "300ms ease left";
+    wrapper.style.transition = "300ms ease transform";
   }
   
   setSlider()
 });
+
+
+numUlDom.addEventListener("click", (e) => {
+  // 获取索引
+  const idx = Number(e.target.dataset.index);
+  console.log('idx: ', idx);
+
+  if (!Number.isNaN(idx)) {
+    swiperIdx = idx;
+    // 直接设置transform来移动元素
+    setSlider()
+  }
+});
+
+
+
+
+// 初始化默认调用一次设置
+setIndicatorStyle();
