@@ -4,7 +4,7 @@
   height: 400px;
   margin: 0 auto;
   background-color: gray;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .ul-img {

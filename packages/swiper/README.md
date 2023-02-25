@@ -27,6 +27,11 @@ Array.from() 方法对一个`类似数组`或`可迭代对象`创建一个新的
 推荐使用 `Number.isNaN()`，判断更为准确
 >原因在于isNaN()会先做一次toNumber的转化，就导致判断不准确。；而 Number.isNaN 会先判断是不是numnber，然后再去判断 NaN
 
+## insertBefore语法
+
+>https://developer.mozilla.org/zh-CN/docs/Web/API/Node/insertBefore
+parentNode.insertBefore(要插入的节点, 参考子节点)
+
 
 ## 性能优化
 
